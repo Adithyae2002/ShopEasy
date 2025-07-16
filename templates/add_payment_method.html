@@ -1,0 +1,159 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Payment Method</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Limit the width of the container */
+            margin: auto; /* Center the container */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Darker color for the heading */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px; /* Space above and below labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%; /* Full width for inputs */
+            padding: 10px;
+            margin-bottom: 15px; /* Space below inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%; /* Full width for button */
+            padding: 10px;
+            background-color: #007bff; /* Blue background for button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff; /* Link color */
+        }
+
+        .back-link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Payment Method</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="payment_type">Payment Type:</label>
+            <select id="payment_type" name="payment_type" required>
+                <option value="" disabled selected>Select a payment method</option>
+                <option value="UPI">UPI</option>
+                <option value="Google Pay">Google Pay</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Net Banking">Net Banking</option>
+            </select>
+
+            <div id="credit-card-details" style="display: none;">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" placeholder="Enter Card Number" required>
+                
+                <label for="cardholder_name">Cardholder Name:</label>
+                <input type="text" id="cardholder_name" name="cardholder_name" placeholder="Enter Cardholder Name" required>
+                
+                <label for="expiry_date">Expiry Date:</label>
+                <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+            </div>
+
+            <div id="upi-details" style="display: none;">
+                <label for="upi_id">UPI ID:</label>
+                <input type="text" id="upi_id" name="upi_id" placeholder="Enter UPI ID" required>
+            </div>
+
+            <div id="google-pay-details" style="display: none;">
+                <label for="google_pay_account">Google Pay Account:</label>
+                <input type="text" id="google_pay_account" name="google_pay_account" placeholder="Enter Google Pay Account Email/Phone" required>
+            </div>
+
+            <div id="paypal-details" style="display: none;">
+                <label for ="paypal_email">PayPal Email:</label>
+                <input type="email" id="paypal_email" name="paypal_email" placeholder="Enter PayPal Email" required>
+            </div>
+
+            <div id="net-banking-details" style="display: none;">
+                <label for="bank_account">Bank Account Number:</label>
+                <input type="text" id="bank_account" name="bank_account" placeholder="Enter Bank Account Number" required>
+                
+                <label for="ifsc_code">IFSC Code:</label>
+                <input type="text" id="ifsc_code" name="ifsc_code" placeholder="Enter IFSC Code" required>
+            </div>
+
+            <button type="submit">Add Payment Method</button>
+        </form>
+        <a class="back-link" href="{% url 'account_managements' %}">Back to Account Management</a>
+    </div>
+
+    <script>
+        document.getElementById('payment_type').addEventListener('change', function() {
+            var paymentType = this.value;
+
+            // Hide all details sections initially
+            document.getElementById('credit-card-details').style.display = 'none';
+            document.getElementById('upi-details').style.display = 'none';
+            document.getElementById('google-pay-details').style.display = 'none';
+            document.getElementById('paypal-details').style.display = 'none';
+            document.getElementById('net-banking-details').style.display = 'none';
+
+            // Show the relevant details section based on the selected payment type
+            if (paymentType === 'Credit Card') {
+                document.getElementById('credit-card-details').style.display = 'block';
+            } else if (paymentType === 'UPI') {
+                document.getElementById('upi-details').style.display = 'block';
+            } else if (paymentType === 'Google Pay') {
+                document.getElementById('google-pay-details').style.display = 'block';
+            } else if (paymentType === 'PayPal') {
+                document.getElementById('paypal-details').style.display = 'block';
+            } else if (paymentType === 'Net Banking') {
+                document.getElementById('net-banking-details').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

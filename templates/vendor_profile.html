@@ -1,0 +1,27 @@
+{% extends 'Dashboard.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Profile</title>
+</head>
+<body>
+    <h1>Vendor Profile</h1>
+    <div>
+        <p><strong>Username:</strong> {{ profile.user.username }}</p>
+        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+        <p><strong>Contact Number:</strong> {{ profile.contact_number }}</p>
+        <p><strong>Address:</strong> {{ profile.address }}</p>
+        {% if profile.profile_picture %}
+            <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" width="100">
+        {% else %}
+            <p>No profile picture uploaded.</p>
+        {% endif %}
+    </div>
+    <a href="{% url 'edit_vendor_profile' %}">Edit Profile</a>
+    <a href="{% url 'vendor_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,266 @@
+/* Global Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  /* Left section of the navbar */
+  .nav-left a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  
+  .nav-left a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Center section (title) */
+  .nav-center h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #f1f1f1; /* Optional highlight color */
+  }
+  
+  /* Right section of the navbar */
+  .nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 10px;
+  }
+  
+  .nav-right a:hover {
+    color: #f9c00c; /* Optional hover color */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .nav-left, .nav-right {
+        margin: 10px 0;
+    }
+  }
+  .container {
+    display: flex;
+    padding: 20px;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Product Details Section */
+.product-details {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* Product Image */
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Product Information */
+.product-info {
+    padding-left: 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Add to Cart Section */
+.add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-to-cart-form label {
+    font-size: 1rem;
+}
+
+.add-to-cart-form input {
+    padding: 8px;
+    font-size: 1rem;
+    width: 60px;
+}
+
+.add-to-cart-button {
+    padding: 12px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #555;
+}
+
+ /* Footer Container Layout */
+ .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between sections */
+  }
+  
+  .footer-section {
+    flex: 1 1 200px; /* Ensures responsiveness */
+    margin: 10px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #f4a261; /* Highlighted section title color */
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ef9d5a; /* Highlight color on hover */
+  }
+  
+  .footer-section p,
+  .footer-section label {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #f4a261;
+  }
+  
+  /* Form Styling */
+  footer form input[type="email"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  footer form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  footer form button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  footer form button:hover {
+    background-color: #f4a261; /* Highlight button color */
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+  }
+  

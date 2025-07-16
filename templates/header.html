@@ -1,0 +1,47 @@
+{% load static %}
+{% block content %}
+
+<header>
+  <nav class="navbar">
+    <!-- Left Navigation -->
+    <div class="nav-left">
+      <a href=" {% url 'home' %} ">Home</a>
+        <a href="{% url 'products' %}">Products</a>
+        <a href=" {% url 'cart' %}">Cart</a>
+        <a href=" {% url 'login' %}">Login</a>
+
+    </div>
+    
+    <!-- Center Title -->
+    <div class="nav-center">
+        <h1>Shopeasy</h1>
+    </div>
+    
+    <!-- Right Navigation -->
+    <div class="nav-right">
+      <a href="{% url 'wishlist_view' %}">&#9825;</a> <!-- Heart symbol for wishlist -->
+      <a href="{% url 'logout' %}" title="Logout" onclick="logout()">&#128274;</a> <!-- Lock symbol for logout -->  
+        
+        <form method="post" action="{% url 'home' %}">
+          {% csrf_token %}
+          <button type="submit"></button>
+      </form>
+    </div>
+    <script>
+      // Logout function
+      function logout() {
+        // Clear user session (e.g., localStorage, cookies)
+        localStorage.clear();
+        document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  
+        // Redirect to login or home page
+        window.location.href = "/login.html";
+      }
+    </script>
+  
+</nav>
+  </header>
+  {% endblock %}
+
+
+  

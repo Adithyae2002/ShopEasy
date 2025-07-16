@@ -1,0 +1,114 @@
+body{
+ height: 100vh;
+ background-image:url("imgs/pexels-adrien-olichon-1257089-2387532.jpg") ;
+ background-size:cover;
+ background-color: rgb(0, 0, 0);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden; /* Disable scroll */
+}
+header{
+ color: rgb(241, 241, 241);
+ font-size: 30px;
+ font-weight: bold;
+ margin-top: 3rem;
+ margin-bottom: -1rem;
+}
+.container {
+background-color: #020202;
+ text-align: center;
+ box-shadow:-6px 24px 50px 20px rgba(150, 169, 169, 0.8);
+ width: 350px;
+ height: 450x;
+ padding: 30px;
+ border-radius: 20px;
+ backdrop-filter: blur(6px); 
+}
+form .input{
+ position: relative;
+ padding:60px 20px;
+}
+.input .icon{
+ position: absolute;
+ left: 10px;
+ top: 50%;
+ transform: translateY(-50%);
+ color: #999;
+}
+#inputfield{
+ font-size: 15px;
+ width: 90%;
+ padding: 7px;
+ margin: 7px 0px;
+ border:none
+}
+#text1{
+ font-size: 15px;
+ font-weight: bold;
+ padding-right:11rem;
+ padding-top: 10px;
+ color: rgb(235, 224, 224);
+ text-decoration: none;
+}
+#text2{
+ font-weight: bold;
+ padding: 12px 12px;
+ color: rgb(238, 230, 230);
+ display: block;
+}    
+.loginbtn{
+ background-color: #007BFF;
+ font-family: 'Roboto', sans-serif;
+ font-weight: bolder;
+ text-align: center;
+ font-size: 15px;
+ color:black;
+ border: none;
+ margin-top: 11px;
+ padding: 10px 122px;
+ transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}   
+.loginbtn:hover {
+ background-color: #3f3e3e; 
+ transform: scale(1.02); 
+ color: #fff; 
+}
+.social button{
+ font-family: 'Roboto', sans-serif;
+ font-size: 18px;
+ margin:4px 26px;
+ padding: 10px 10px;
+ 
+}
+.social button:hover{
+ transform: scale(1.02); 
+}
+.fb{
+ padding: 13px 15px;
+ color: aliceblue;
+ background-color:#3b5998;
+ border: none;
+}
+.fb:hover{
+ background-color: #2d4373;
+}
+.insta{
+ padding: 10px 15px;
+ color: aliceblue;
+ background-color:#E1306C;
+ border: none;
+}
+.insta:hover{
+ background-color: #c13584; 
+}
+.signup{
+ font-family: 'Montserrat', sans-serif;
+ padding: 12px 12px;
+ color: rgb(255, 255, 255);
+ display: block;
+}
+.sun{
+ color: #98e2ff;
+ text-decoration: none;
+}

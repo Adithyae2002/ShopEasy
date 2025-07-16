@@ -1,0 +1,356 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+/* Left section of the navbar */
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.nav-left a:hover {
+  text-decoration: underline;
+}
+
+/* Center section (title) */
+.nav-center h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #f1f1f1; /* Optional highlight color */
+}
+
+/* Right section of the navbar */
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.nav-right a:hover {
+  color: #f9c00c; /* Optional hover color */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .nav-left, .nav-right {
+      margin: 10px 0;
+  }
+}
+ /* Banner container */
+ .banner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Banner image */
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+/* Text and button container */
+.banner-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.banner-content h1 {
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.banner-content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.banner-content a:hover {
+  background-color: #e55a50;
+}
+ /* General Footer Styling */
+footer {
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+/* Basic reset for body and margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Best Sellers Section */
+.best-sellers {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.best-sellers .heading h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.best-sellers .heading p {
+  font-size: 1.25rem;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Dress Cards Section */
+.dress-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card .description {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Shop Button */
+.shop-button {
+  margin-top: 20px;
+}
+
+.shop-button button {
+  background-color: #d9534f;
+  color: white;
+  font-size: 1.25rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.shop-button button:hover {
+  background-color: #c9302c;
+}
+
+  /* Footer Container Layout */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between sections */
+  }
+  
+  .footer-section {
+    flex: 1 1 200px; /* Ensures responsiveness */
+    margin: 10px;
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #f4a261; /* Highlighted section title color */
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #ef9d5a; /* Highlight color on hover */
+  }
+  
+  .footer-section p,
+  .footer-section label {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #f4a261;
+  }
+  
+  /* Form Styling */
+  footer form input[type="email"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  footer form input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  footer form button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  footer form button:hover {
+    background-color: #f4a261; /* Highlight button color */
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+  }
+  
+
+  /* buy_now.css */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Product Details Section */
+.product-details {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Product Title */
+.product-details h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Product Image */
+.product-details img {
+  display: block;
+  margin: 0 auto 15px;
+  border-radius: 8px;
+}
+
+/* Price and Description */
+.product-details p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* Quantity Input */
+form input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

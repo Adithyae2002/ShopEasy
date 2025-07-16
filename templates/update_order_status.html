@@ -1,0 +1,24 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1. 0">
+    <title>Update Order Status</title>
+</head>
+<body>
+    <h1>Update Order Status for Order #{{ order.id }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="status">Select New Status:</label>
+        <select name="status" id="status">
+            {% for choice in order.STATUS_CHOICES %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Update Status</button>
+    </form>
+    <a href="{% url 'order_tracking' %}">Back to Order Tracking</a>
+</body>
+</html>

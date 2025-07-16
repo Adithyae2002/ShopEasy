@@ -1,0 +1,31 @@
+{% extends 'landing.html' %}
+{% block content %}
+<div class="container">
+    <h1>Order Details</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Order ID: {{ order.order_id }}</h5>
+            <p class="card-text"><strong>Customer:</strong> {{ order.customer.username }}</p>
+            <p class="card-text"><strong>Order Date:</strong> {{ order.order_date }}</p>
+            <p class="card-text"><strong>Total Amount:</strong> ${{ order.total_amount }}</p>
+            <p class="card-text"><strong>Status:{{ order.status }}</p>
+            <h5>Items:</h5>
+            <ul>
+                {% for item in order.items.all %}
+                <li>{{ item.product_name }} (x{{ item.quantity }}) - ${{ item.price }}</li>
+                {% endfor %}
+            </ul>
+            <form method="post">
+                {% csrf_token %}
+                <label for="status">Update Status:</label>
+                <select name="status" id="status">
+                    {% for status in order.STATUS_CHOICES %}
+                    <option value="{{ status.0 }}" {% if order.status == status.0 %}selected{% endif %}>{{ status.1 }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

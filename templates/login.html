@@ -1,0 +1,35 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">  <!-- Use forward slashes for paths -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <form action="{% url 'loginforms' %}" method="POST">  <!-- Use Django's URL tag -->
+            {% csrf_token %}
+            <header>Login Form</header>
+            <div class="input">
+                <input type="text" name="email" id="inputfield" placeholder="Email" required> <br>  <!-- Ensure required attribute -->
+                <input type="password" name="password" id="inputfield" placeholder="Password" required><br>  <!-- Change name to password -->
+                <a href="#" id="text1">Forgot password?</a> <br>
+                <button type="submit" class="loginbtn">LOGIN</button>  <!-- Change button type to submit -->
+                <a id="text2">Or login with</a>
+                <div class="social">
+                    <button type="button" class="fb">Facebook</button>  <!-- Change to type="button" -->
+                    <button type="button" class="insta">Instagram</button>  <!-- Change to type="button" -->
+                </div>
+                <div class="signup">
+                    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>  <!-- Use Django's URL tag -->
+                </div>
+            </div>  
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

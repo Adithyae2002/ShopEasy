@@ -1,0 +1,148 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Updated font for a modern look */
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* Lighter background for a fresher look */
+            color: #343a40; /* Softer text color for improved readability */
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .header {
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .header h1 {
+            color: #343a40; /* Darker color for the header */
+            font-size: 2.5em; /* Increased font size for better visibility */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #007bff; /* Primary color for the navbar */
+        }
+
+        .navbar-brand {
+            color: #ffffff; /* White text color for the brand */
+            font-weight: bold; /* Bold font for the brand */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color for nav links */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d1e7dd; /* Light color on hover */
+        }
+
+        /* Sub-navigation Styles */
+        .sub-nav {
+            margin-top: 30px; /* Space above the sub-navigation */
+            background-color: #e9ecef; /* Light background for sub-navigation */
+            padding: 15px; /* Padding for sub-navigation */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        .sub-nav h2 {
+            color: #343a40; /* Darker color for sub-navigation header */
+        }
+
+        .sub-nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sub-nav ul li {
+            margin: 10px 0; /* Space between sub-navigation links */
+        }
+
+        .sub-nav ul li a {
+            text-decoration: none;
+            color: #007bff; /* Blue color for sub-navigation links */
+            padding: 10px 15px; /* Padding for sub-navigation links */
+            border-radius: 5px; /* Rounded corners */
+            transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .sub-nav ul li a:hover {
+            background-color: #007bff; /* Blue background on hover */
+            color: #ffffff; /* White text color on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em; /* Adjusted font size for mobile */
+            }
+            .navbar-nav .nav-link {
+                padding: 10px; /* Adjusted padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_home' %}">admin_home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'manage_products' %}">Product Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'manage_orders' %}">Order Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_management' %}">Account Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_profile' %}">profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="{% url 'logout' %}" class="btn btn-danger mt-3">Logout</a>
+        </div>
+    </nav>
+    
+     <div class="container">
+        <h1>WELCOME TO ADMIN DASHBOARD </h1>
+     </div>
+            <div class="sub-nav">
+        <h2>Quick Access</h2>
+        <ul>
+            <li><a href="{% url 'manage_products' %}">Manage Products</a></li>
+            <li><a href="{% url 'manage_orders' %}">View Orders</a></li>
+        </ul>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+{% endblock %}

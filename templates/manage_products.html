@@ -1,0 +1,187 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Manage Products</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light background color */
+            color: #333; /* Dark text color */
+        }
+
+        /* Header Styles */
+        .header {
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .header h1 {
+            color: #343a40; /* Darker color for the header */
+            font-size: 2.5em; /* Increased font size for better visibility */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #007bff; /* Primary color for the navbar */
+        }
+
+        .navbar-brand {
+            color: #ffffff; /* White text color for the brand */
+            font-weight: bold; /* Bold font for the brand */
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text color for nav links */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d1e7dd; /* Light color on hover */
+        }
+
+
+        /* Link Styles */
+        a {
+            text-decoration: none;
+            color: #007bff; /* Link color */
+            font-weight: bold; /* Make links bold */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Remove double borders */
+            margin-top: 20px; /* Space above the table */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Light border for table cells */
+            padding: 12px; /* Increased padding for better spacing */
+            text-align: left; /* Align text to the left */
+        }
+
+        th {
+            background-color: #4e73df; /* Header background color */
+            color: white; /* Header text color */
+            font-weight: bold; /* Make header text bold */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Highlight row on hover */
+        }
+
+        /* Image Styles */
+        .product-image {
+            width: 50px; /* Set a fixed width for images */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Optional: round the corners */
+        }
+
+        /* Action Links Styles */
+        .action-links a {
+            margin-right: 10px; /* Space between action links */
+            color: #007bff; /* Link color */
+        }
+
+        .action-links a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em; /* Smaller font size for mobile */
+            }
+            th, td {
+                padding: 8px; /* Adjust padding for smaller screens */
+            }
+            .product-image {
+                width: 40px; /* Smaller image size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Manage Products</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin_home' %}">admin_home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'manage_products' %}">Product Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'manage_orders' %}">Order Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_management' %}">Account Management</a>
+                    </li>
+              
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+    <a href="{% url 'add_product' %}">Add New Product</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th> <!-- Added Image Column -->
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {% if product.image %} <!-- Check if the product has an image -->
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                    {% else %}
+                        <img src="{% static 'images/default_product.jpg' %}" alt="Default Image" class="product-image"> <!-- Default image if none -->
+                    {% endif %}
+                </td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>${{ product.amount }}</td>
+                <td class="action-links">
+                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                    <a href="{% url 'delete_product' product.id %}" onclick="return confirm('Are you sure you want to delete this product?');">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No products found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+{% endblock %}

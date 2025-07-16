@@ -1,0 +1,30 @@
+{% extends 'landing.html' %}
+{% block content %}
+<div class="container">
+    <h1>Order Management</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Order Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if orders %}
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_id }}</td>
+                <td>{{ order.customer.username }}</td>
+                <td>{{ order.order_date }}</td>
+                <td>${{ order.total_amount }}</td>
+                <td>{{ order.status }}</td>
+                <td><a href="{% url 'order_detail' order.order_id %}" class="btn btn-primary">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

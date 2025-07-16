@@ -1,0 +1,169 @@
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar Styling */
+        .navbar {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40 !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #495057 !important;
+            font-weight: 500;
+        }
+        
+        .navbar-nav .dropdown-menu {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+        }
+        
+        .dropdown-item {
+            color: #495057 !important;
+            font-weight: 400;
+            padding: 0.5rem 1.5rem;
+            transition: background-color 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            background-color: #f1f3f5;
+        }
+        
+        /* Wishlist and Logout Icons */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 1rem;
+        }
+        
+        .nav-right a {
+            font-size: 1.25rem;
+            color: #495057;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-right a:hover {
+            color: #dc3545;
+        }
+        
+        /* Container Styling */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        
+        .container h1 {
+            color: #343a40;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .container p {
+            color: #6c757d;
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-right {
+                display: none;
+            }
+        
+            .navbar-toggler {
+                border: none;
+                background: transparent;
+            }
+        
+            .navbar-brand {
+                font-size: 1.25rem;
+            }
+        
+            .container {
+                padding: 1rem;
+            }
+        }
+        
+/* Dress Cards Section */
+.dress-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card .description {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+/* Shop Button */
+.shop-button {
+  margin-top: 20px;
+}
+
+.shop-button button {
+  background-color: #d9534f;
+  color: white;
+  font-size: 1.25rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.shop-button button:hover {
+  background-color: #c9302c;
+}
+
+    

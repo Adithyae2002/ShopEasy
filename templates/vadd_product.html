@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light background color */
+            color: #333; /* Dark text color */
+            text-align: center; /* Center text */
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #333;
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        /* Form Styles */
+        form {
+            display: inline-block; /* Center the form */
+            margin-top: 20px; /* Space above the form */
+            padding: 20px; /* Padding around the form */
+            background-color: #fff; /* White background for the form */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        /* Input Styles */
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%; /* Full width inputs */
+            padding: 10px; /* Padding inside inputs */
+            margin: 10px 0; /* Space between inputs */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 4px; /* Rounded corners */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Button Styles */
+        button {
+            background-color: #4e73df; /* Button background color */
+            color: white; /* Button text color */
+            padding: 10px 15px; /* Padding inside button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+            transition: background 0.3s; /* Smooth background transition */
+        }
+
+        button:hover {
+            background-color: #1cc88a; /* Change background on hover */
+        }
+
+        /* Link Styles */
+        a {
+            text-decoration: none; /* Remove underline */
+            color: #007bff; /* Link color */
+            display: inline-block; /* Make link a block element */
+            margin-top: 20px; /* Space above the link */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em; /* Smaller font size for mobile */
+            }
+            button {
+                width: 100%; /* Full width button on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Product</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'vendor_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>
